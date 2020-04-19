@@ -7,112 +7,28 @@
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
-<!--GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-``` -->
-
-<body>
-<script>
-
-    var passwordlength = 0;
-        lowercase = ["a", "b", "c", "d" ,"e" ,"f", "g", "h", "i", "j" ,"k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
-        uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
-        numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-        specialChar =["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
-
-    function isPasswordLengthCorrect (passwordlength) {
-
-     return passwordlength >= 8 && passwordlength <=128; 
-     }
-     while(! isPasswordLengthCorrect(passwordlength)) {
-        passwordLength = parseInt(prompt("Provide a password length between 8 and 128"));
-     }
-
-     console.log(passwordlength);
-
-    //  var options = {
-     
-    //  var lowercase = confirm("would you like lowercase letters in your password?"),
-
-    //  var uppercase = confirm("Would you like uppercase letters in your password?"),
-
-    //  var numeric = confirm("Would you like numbers in your password"),
-
-    //  var specialChar =confirm("Would you like special characters?"),
-    //  };
-
-     console.log(options);
-
-     var options = {
-        "passwordLength" = passwordLength,
-        "lowercase": confirm(""),
-        "uppercase" : confirm(""),
-        "numeric" : confirm(""),
-        "specialChar" : confirm(""),
-     };
-
-    
-    function genPass(options) {
-        var password = ""
-            possibleChar = []
-            requiredChar = []
-
-        if (options.lowercase) {
-
-           possibleChar = possibleChar.concat(lowercase);
-           
-           requiredChar.push( lowercase[Math.floor(Math.random() * lowercase.length)]);
-
-        }
-
-        if (options.uppercase) {
-
-            possibleChar = possibleChar.concat(uppercase);
-            requiredChar.push( lowercase[Math.floor(Math.random() * uppercase.length)]);
-        }  
-        
-        if (options.numbers) {
-
-            possibleChar = possibleChar.concat(numbers);
-            requiredChar.push( lowercase[Math.floor(Math.random() * numbers.length)]);
-        }  
-
-        if (options.specialChar) {
-
-            possibleChar = possibleChar.concat(specialChar);
-            requiredChar.push( lowercase[Math.floor(Math.random() * specialChar.length)]);
-        }  
-
-        console.log(possibleChar);
-
-
-        for (var i = 0; i = options.passwordlength; i++) {
-
-            if(requiredChar[i]){
-                password += requiredChar[i]
-            }
-            else{
-             passWord += possibleChar [Math.floor(Math.random() * possibleChar.length)]}
-
-        ;
-        }
-
-        console.log(passWord)
-    
-</script>
-
-</body>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
