@@ -7,7 +7,7 @@ If you do not prompt a password length equal or longer than 8 characters our HTM
 
 Our password generator operates in your web browser!
 
-![picture](src = Preview.jpg)
+![picture](Preview.jpg)
 
 
 Built With
