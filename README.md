@@ -7,7 +7,8 @@ If you do not prompt a password length equal or longer than 8 characters our HTM
 
 Our password generator operates in your web browser!
 
-Screenshot of working password generator
+![picture](Preview.jpg)
+
 
 Built With
 Microsoft Visual Studio Code
